@@ -1,0 +1,82 @@
+<html>
+
+<head>
+
+<style type="text/css">
+body {
+	text-transform: uppercase;
+}
+</style>
+
+</head>
+
+
+<body>
+	<!-- Mini curso front-end -->
+
+	<form action="salvarUsuario" method="post" onsubmit="return validaDados()? true : false">
+
+		<table style="background-color: #CFCFCF;">
+			<tr>
+				<td><label>Nome:</label></td>
+				<td><input type="text" id="nome" name="nome"
+					style="border-radius: 3px;"></td>
+			</tr>
+
+			<tr>
+
+				<td><label>Login:</label></td>
+				<td><input type="text" id="login" name="login"
+					style="border-radius: 3px;"></td>
+
+			</tr>
+
+			<tr>
+
+				<td><label>Senha:</label></td>
+				<td><input type="password" id="senha" name="senha"
+					style="border-radius: 3px;"></td>
+
+			</tr>
+
+			<tr>
+				<td />
+				<td><input type="submit" value="salvar"
+					style="width: 100%; border-radius: 3px;"></td>
+
+			</tr>
+
+
+
+		</table>
+
+	</form>
+	
+<script type="text/javascript">
+ 
+function validaDados() {
+	var nome = document.getElementById("nome").value;
+	var login = document.getElementById("login").value;
+	var senha = document.getElementById("senha").value;
+	
+	if(nome == '' ){
+		alert('Informe o Nome!')
+		return false;
+	}else if(login == '' ){
+		alert('Informe o Login!')
+		return false;
+	}else if(senha == '' ){
+		alert('Informe a Senha!')
+		return false;
+	}
+	return true;
+	
+	
+	
+}
+
+</script>	
+
+</body>
+
+</html>
