@@ -4,37 +4,30 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <h:head>
-	<script>
-		
-		function alteraValorCampo(){
-			var campo = document.getElementById('formPessoa:nome');
-			campo.value = 'eu cliquei no campo :)';
-		}
 	
-	</script>
-
-	<title>Olá jsf</title>
-
-
+	<title>Login</title>
+	
 </h:head>
 
 <h:body>
 
-	<h:form id="formPessoa">
-		<h1>Página index.jsf</h1>
+	<h:form id="formLogin" style="margin-top: 17%; margin-left:40%">
+		<h1>Realize o Login</h1>
 		
 		<br/>
 		<br/>
 		
-		<h:commandButton value="Clicar" onclick="alteraValorCampo();"/>
-		<h:inputText id="nome" onclick="this.value='troquei o valor!'" onchange="this.value=this.value.toUpperCase();"/>
-		
-		<br/>
-		<br/>
-		
-		<h:commandButton value="Navegacao Implicita" action="primeirapagina"/>
-		<h:commandButton value="Navegacao Explicita" action="explicita"/>
-		
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Login:"/>
+			<h:inputText value="#{pessoaBean.pessoa.login}"/>
+			
+			<h:outputLabel value="Senha:"/>
+			<h:inputSecret value="#{pessoaBean.pessoa.senha}"/>
+			
+			<h:commandButton value="Acessar" action="#{pessoaBean.logar}"/>
+			
+			
+		</h:panelGrid>
 		
 	</h:form>
 
